@@ -1,0 +1,180 @@
+@import "../../style/extends.scss";
+@import "../../style/variables.scss";
+
+.register {
+  text-align: center;
+  margin-top: 165px;
+
+  &__title {
+    @include typography-h1;
+    font-weight: 400;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 467px;
+    margin: auto;
+    margin-top: 89px;
+    text-align: left;
+
+    label {
+      line-height: 28px;
+      margin-bottom: 7px;
+      letter-spacing: 0.4px;
+      cursor: pointer;
+    }
+
+    & > input,
+    .photo__input {
+      margin-bottom: 17px;
+      height: 38px;
+      border-radius: 4px;
+      border: 1px solid #ced4da;
+      padding-left: 14px;
+    }
+
+    input[name="phone"] {
+      margin-bottom: 6px;
+    }
+
+    input[type="radio"] {
+      margin-right: 10px;
+      margin-left: 2px;
+      opacity: 0;
+    }
+  }
+
+  .phone__format {
+    font-size: 12px;
+    margin-left: 2px;
+  }
+
+  .form {
+    &__select {
+      margin-top: 25px;
+      font-size: 15px;
+    }
+
+    &__position {
+      margin-bottom: -1px;
+      margin-top: 3px;
+      position: relative;
+      width: fit-content;
+
+      &:hover > .checkmark {
+        background-color: #ccc;
+      }
+
+      input:checked ~ .checkmark {
+        border: 4px solid #2196f3;
+      }
+
+      input:checked ~ .checkmark:after {
+        display: block;
+      }
+
+      .checkmark {
+        position: absolute;
+        top: 6px;
+        left: 2px;
+        height: 15px;
+        width: 15px;
+        background-color: #eee;
+        border-radius: 50%;
+        z-index: 2;
+
+        &:after {
+          content: "";
+          position: absolute;
+          display: none;
+          top: 9px;
+          left: 9px;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    &__photo {
+      margin-top: 12px;
+    }
+
+    &__submit {
+      width: 212px;
+      margin: auto;
+      margin-bottom: 20px;
+      word-wrap: normal;
+    }
+
+    &__loader {
+      margin: auto;
+    }
+
+    &__error,
+    &__error--description {
+      display: block;
+      margin: auto;
+      color: rgb(255, 0, 0);
+      font-style: italic;
+    }
+  }
+
+  .photo__load {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 23px;
+
+    .photo__input {
+      width: 100%;
+      border-radius: 4px 0 0 4px;
+    }
+
+    label {
+      padding: 3px 14px;
+      height: 38px;
+      border-radius: 0 4px 4px 0;
+      border: 1px solid #d4d9de;
+      background-color: #f8f7f5;
+      text-align: center;
+    }
+
+    .photo__file {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet-screen) {
+  .register {
+    &__title {
+      font-size: 40px;
+      line-height: 44px;
+    }
+
+    &__form {
+      width: 350px;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-screen) {
+  .register {
+    margin-top: 50px;
+
+    &__title {
+      font-size: 30px;
+      line-height: 34px;
+    }
+
+    &__form {
+      width: 300px;
+
+      & > input,
+      .photo__input {
+        width: 95%;
+      }
+    }
+  }
+}

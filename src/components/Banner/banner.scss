@@ -1,0 +1,81 @@
+@import "../../style/extends.scss";
+@import "../../style/variables.scss";
+
+.banner {
+  margin-top: $header-height;
+  padding-left: 30px;
+  position: relative;
+  height: 600px;
+
+  &__image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    z-index: -1;
+  }
+
+  &__title {
+    width: 520px;
+    color: $background-color;
+    @include typography-h1;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: -0.6px;
+    padding-top: 107px;
+    margin-top: 0;
+    margin-bottom: 25px;
+  }
+
+  &__description {
+    width: 530px;
+    height: 110px;
+    color: $background-color;
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  &__button {
+    margin-top: 55px;
+  }
+}
+
+@media screen and (max-width: $tablet-screen) {
+  .banner {
+    margin: 0;
+    &__title {
+      font-size: 40px;
+      line-height: 44px;
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .banner {
+    height: 720px;
+    padding: 0 15px;
+    text-align: center;
+
+    &__title,
+    &__description {
+      width: 100%;
+    }
+
+    &__button {
+      margin-top: 140px;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-screen) {
+  .banner {
+    &__title {
+      font-size: 30px;
+      line-height: 34px;
+      margin: 0;
+    }
+  }
+}

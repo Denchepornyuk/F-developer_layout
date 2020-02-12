@@ -1,0 +1,59 @@
+@import "./variables.scss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+}
+
+.container {
+  max-width: $small-desktop-screen;
+  margin: auto;
+
+  &:not(:first-of-type) {
+    padding: 0 28px;
+  }
+}
+
+.button {
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  background-color: $main-colors;
+  padding: 9px 60px;
+  color: #fefefe;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.2s;
+  scroll-behavior: smooth;
+
+  &:hover {
+    background-color: #d24335;
+    transition: 0.2s;
+  }
+}
+
+@media screen and (max-width: $small-desktop-screen) {
+  body {
+    font-size: 16px;
+  }
+
+  .container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: $mobile-screen) {
+  .container {
+    padding: 0 15px;
+  }
+}

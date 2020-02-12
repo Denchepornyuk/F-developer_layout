@@ -1,0 +1,128 @@
+@import "../../style/extends.scss";
+@import "../../style/variables.scss";
+
+.header {
+  @include flex-position;
+
+  position: fixed;
+  top: 0;
+  width: $small-desktop-screen;
+  height: $header-height;
+  padding: 0 30px;
+  background-color: $background-color;
+  z-index: 1;
+
+  &__logo {
+    z-index: 2;
+    width: 85px;
+    height: 70px;
+  }
+
+  .navbar {
+    &__menu {
+      @include flex-position;
+
+      padding: 0;
+      margin: 0;
+      width: 445px;
+      list-style: none;
+    }
+
+    &__link {
+      text-decoration: none;
+      color: #000;
+      transition: 0.2s;
+
+      &:hover {
+        color: $main-colors;
+        transition: 0.2s;
+      }
+    }
+  }
+
+  &__navbar--mobile {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 40px 15px;
+    width: 290px;
+    background-color: $background-color;
+    transform: translateX(-100%);
+    transition: 0.3s;
+    z-index: 1;
+
+    .mobile__menu {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0;
+      padding-top: 20px;
+
+      li:not(:last-of-type) {
+        margin-bottom: 25px;
+      }
+
+      li:nth-child(5n+5):not(:last-of-type) {
+        padding-bottom: 31px;
+      }
+
+      li:nth-child(5n+5):not(:last-of-type)::after,
+      li:nth-child(1)::after {
+        content: "";
+        display: block;
+        height: 1px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        margin-top: 25px;
+        border-bottom: 1px solid #000;
+        opacity: 0.3;
+      }
+    }
+
+    li:nth-child(1)::after {
+      top: 34px;
+    }
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__label {
+    display: none;
+    z-index: 2;
+  }
+
+  &__input:checked ~ &__navbar--mobile {
+    transform: translateX(0);
+    transition: 0.3s;
+  }
+
+}
+
+@media screen and (max-width: $small-desktop-screen) {
+  .header {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: $tablet-screen) {
+  .header {
+    position: static;
+
+    &__navbar {
+      display: none;
+    }
+
+    &__navbar--mobile {
+      display: block;
+    }
+
+    &__label {
+      display: block;
+    }
+  }
+}

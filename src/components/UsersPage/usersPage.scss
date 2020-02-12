@@ -1,0 +1,143 @@
+@import "../../style/extends.scss";
+@import "../../style/variables.scss";
+
+.users {
+  &__title {
+    padding-top: 150px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    @include typography-h1;
+  }
+
+  &__cards {
+    list-style: none;
+    margin-top: 115px;
+    @include flex-position;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-left: 12px;
+  }
+
+  .user {
+    &__card {
+      width: 200px;
+      text-align: center;
+      overflow: hidden;
+      margin-bottom: 30px;
+      align-self: flex-start;
+      height: 300px;
+    }
+
+    &__card:nth-last-child(-n+3) {
+      margin-bottom: 0;
+    }
+
+    &__card:not(:nth-child(3n+3)) {
+      margin-right: 132px;
+    }
+
+    &__photo {
+      border-radius: 50px;
+      width: 70px;
+      height: 70px;
+    }
+
+    &__name {
+      font-size: 24px;
+      margin-top: 14px;
+      margin-bottom: 0;
+    }
+
+    &__position,
+    &__email,
+    &__phone {
+      font-size: 16px;
+      margin-top: 12px;
+    }
+
+    &__position {
+      margin-top: 10px;
+    }
+
+    &__email {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      cursor: pointer;
+    }
+  }
+
+  &__button {
+    margin-bottom: 90px;
+  }
+}
+
+@media screen and (max-width: $small-desktop-screen) {
+  .users {
+    &__cards {
+      margin: auto;
+      margin-top: 80px;
+      width: 660px;
+      padding: 0;
+    }
+
+    .user {
+      &__card:not(:nth-child(3n+3)) {
+        margin-right: 30px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .users {
+    &__title {
+      font-size: 40px;
+      line-height: 44px;
+    }
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .users {
+    &__cards {
+      width: 400px;
+    }
+
+    .user {
+      &__card:not(:nth-child(3n+3)) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .users {
+    &__title {
+      padding-top: 50px;
+    }
+
+    &__cards {
+      width: 280px;
+      justify-content: center;
+    }
+
+    &__title {
+      font-size: 30px;
+      line-height: 34px;
+    }
+
+    .user {
+      &__card {
+        height: 270px;
+        margin-bottom: 0;
+      }
+
+      &__position,
+      &__email,
+      &__phone {
+        margin-top: 5px;
+      }
+    }
+  }
+}

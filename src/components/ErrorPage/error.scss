@@ -1,0 +1,14 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  padding-top: 100px;
+
+  &__text {
+    font-size: 18px;
+    font-style: italic;
+    color: rgb(255, 0, 0);
+  }
+}

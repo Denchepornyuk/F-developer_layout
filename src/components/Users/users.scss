@@ -1,0 +1,13 @@
+@import "../../style/variables.scss";
+
+.users {
+  margin-top: 138px;
+  background-color: $background-color2;
+  text-align: center;
+}
+
+@media screen and (max-width: $mobile-screen) {
+  .users {
+    margin-top: 0;
+  }
+}
